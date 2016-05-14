@@ -1,0 +1,29 @@
+{
+
+    // Allow standard browser globals e.g 'window', 'document'
+    "browser"      : true,
+
+
+    // Code style
+    "camelcase"    : true,
+    "curly"        : true,
+    "strict"       : false,
+    "indent"       : 4,
+    "asi"          : true, // Require semicolons
+    "unused"       : true,
+    "undef"        : true,
+    "plusplus"     : true,
+    "quotmark"     : "single",
+    "eqeqeq"       : true,   // Require triple equals i.e. `===`
+
+
+    // Code complexity
+    "maxparams"     : 4,
+    "maxdepth"      : 3,
+    "maxcomplexity" : 6,
+
+
+    // Debug
+    "devel"        : false // Do not allow debug code e.g. 'console.log' into stage or prod
+
+}
