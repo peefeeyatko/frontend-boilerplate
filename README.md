@@ -1,7 +1,7 @@
 Front-end boilerplate
 =====================
 
-A bower, npm and gulp boilerplate for projects requiring task running.
+A bower, npm and gulp boilerplate for projects requiring task running
 
 ## Requirements
 * [node](http://nodejs.org/) >= 0.10.29
@@ -18,6 +18,21 @@ A bower, npm and gulp boilerplate for projects requiring task running.
 ## Quick Start
 * From your project's root directory run `git clone https://github.com/peefeeyatko/frontend-boilerplate.git`
 * run `npm install` (you may need to do `sudo npm install`). This will install all required plugins defined in package.json
+* Update config object in gulpfile.js
+```js
+// Define the in and out paths to your project's assets (sass, js)
+var config = {
+    js: {
+        in: 'public/js/src/**/*.js',
+        out: 'public/js/dist/'
+    },
+
+    sass: {
+        in: 'public/css/src/**/*.scss',
+        out: 'public/css/dist/'
+    }
+};
+```
 * run `gulp` while developing
 * run `gulp --build` for production ready assets
 
