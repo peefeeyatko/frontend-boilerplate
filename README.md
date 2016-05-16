@@ -40,7 +40,7 @@ var config = {
 Short description of each gulp task defined in gulpfile.js
 * `gulp sass` - Compiles, minifies and concatenates all sass files in src directory
 * `gulp js` - Minifies and concatenates all js files in src directory
-* `gulp lint` - Pipes all js files in src directory through jshint reporter the jshint rules are configured in .jshintrc files
+* `gulp lint` - Pipes all js files in src directory through the jshint reporter. jshint rules are configured in .jshintrc file
 
 ### License
 [GNU General Public License Version 3](http://www.gnu.org/licenses/gpl.html)
