@@ -18,7 +18,7 @@ A bower, npm and gulp boilerplate for projects requiring task running
 ## Quick Start
 * From your project's root directory run `git clone https://github.com/peefeeyatko/frontend-boilerplate.git`
 * run `npm install` (you may need to do `sudo npm install`). This will install all required plugins defined in package.json
-* run `bower install` to pull in all required packages for application e.g. Bootstrap, jQuery. These application dependencies will be defined in the bower.json 
+* run `bower install` to pull in all required packages for application e.g. Bootstrap, jQuery. These application dependencies will be defined in the bower.json
 file
 * Update config object in gulpfile.js
 ```js
@@ -43,6 +43,7 @@ Short description of each gulp task defined in gulpfile.js
 * `gulp sass` - Compiles, minifies and concatenates all sass files in src directory
 * `gulp js` - Minifies and concatenates all js files in src directory
 * `gulp lint` - Pipes all js files in src directory through the jshint reporter. Rules are configured in the .jshintrc file
+* `gulp build` - Strips console and debugger statements from js files before minifying and concatenation.
 
 ### License
 [GNU General Public License Version 3](http://www.gnu.org/licenses/gpl.html)
