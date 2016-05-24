@@ -29,6 +29,9 @@ var config = {
     }
 };
 
+// Capture arguments passed to the gulp command
+const ARGS = argv;
+
 // Define Gulp tasks
 gulp.task('sass', function() {
     return gulp.src(config.sass.in)
@@ -50,14 +53,27 @@ gulp.task('lint', function() {
 	  .pipe(jshint.reporter('default', {verbose: true}));
 });
 
-gulp.task('default', ['sass', 'js'], function() {
-    // Watch js for changes
-	gulp.watch(config.js.in, function() {
-        gulp.start('lint', 'js');
-	});
+gulp.task('build', function() {
+    // Strip any debug code from JS
+    return gulp.src(config.js.in)
+      .pipe(strip())
+      .pipe(uglify())
+      .pipe(concat('main.min.js'))
+      .pipe(gulp.dest(config.js.out));
+});
 
-	// Watch sass for changes
-	gulp.watch(config.sass.in, function() {
-		gulp.start('sass');
-	});
+gulp.task('default', ['sass', 'js'], function() {
+    if (ARGS.build === true) {
+        gulp.start('build');
+    } else {
+        // Watch JS for changes
+    	gulp.watch(config.js.in, function() {
+            gulp.start('lint', 'js');
+    	});
+
+    	// Watch SASS for changes
+    	gulp.watch(config.sass.in, function() {
+    		gulp.start('sass');
+    	});
+    }
 });
