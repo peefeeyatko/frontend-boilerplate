@@ -16,6 +16,9 @@ var gulp      = require('gulp'),
     strip     = require('gulp-strip-debug');
 
 
+// Capture arguments passed to the gulp command
+const ARGS = argv;
+
 // Define the paths to the project's assets
 var config = {
     js: {
@@ -28,9 +31,6 @@ var config = {
         out: 'public/css/dist/'
     }
 };
-
-// Capture arguments passed to the gulp command
-const ARGS = argv;
 
 // Define Gulp tasks
 gulp.task('sass', function() {
