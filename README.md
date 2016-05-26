@@ -43,7 +43,7 @@ Short description of each gulp task defined in gulpfile.js
 * `gulp sass` - Compiles, minifies and concatenates all sass files in src directory
 * `gulp js` - Minifies and concatenates all js files in src directory
 * `gulp lint` - Pipes all js files in src directory through the jshint reporter. Rules are configured in the .jshintrc file
-* `gulp build` - Strips console and debugger statements from js files before minifying and concatenation.
+* `gulp build` - Strips console and debugger statements from js files before minifying and concatenation
 
 ### License
 [GNU General Public License Version 3](http://www.gnu.org/licenses/gpl.html)
