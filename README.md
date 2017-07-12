@@ -1,18 +1,14 @@
 Front-end boilerplate
 =====================
 
-A bower, npm and gulp boilerplate for projects requiring task running
+A yarn and gulp boilerplate for projects requiring task running
 
 ## Requirements
-* [node](http://nodejs.org/)
-* [npm](https://www.npmjs.com/)
-* [bower](http://bower.io/)
+* [yarn](https://yarnpkg.com)
 
 ## Quick Start
 * `git clone https://github.com/peefeeyatko/frontend-boilerplate.git`
-* run `npm install` this will install all required plugins and dependencies defined in package.json
-* run `bower install` to pull in all required packages for application e.g. Bootstrap, jQuery. These application dependencies will be defined in the bower.json
-file
+* run `yarn install` this will install all required plugins and dependencies defined in package.json
 * Update config object in gulpfile.js
 ```js
 // Define the in and out paths to your project's assets (sass, js)
