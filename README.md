@@ -4,7 +4,7 @@ Front-end boilerplate
 An npm and gulp boilerplate for projects requiring task running
 
 ## Requirements
-* [yarn](https://npmjs.com/)
+* [npm](https://npmjs.com/)
 * [gulp](http://gulpjs.com/)
 
 ## Quick Start
