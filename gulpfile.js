@@ -16,62 +16,75 @@ var gulp      = require('gulp'),
     strip     = require('gulp-strip-debug');
 
 
-// Capture arguments passed to the gulp command
+// capture arguments passed to the gulp command
 const ARGS = argv;
 
-// Define the paths to the project's assets
+// define the paths to the project's assets
 var config = {
     js: {
-        in: 'public/js/src/**/*.js',
-        out: 'public/js/dist/'
+        in: 'src/js/*.js',
+        out: 'public/js/'
     },
 
     sass: {
-        in: 'public/css/src/**/*.scss',
-        out: 'public/css/dist/'
+        in: 'src/sass/**/*.scss',
+        out: 'public/css/'
     }
 };
 
-// Define Gulp tasks
+// define gulp tasks
 gulp.task('sass', function() {
-    return gulp.src(config.sass.in)
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(concat('style.min.css'))
-      .pipe(gulp.dest(config.sass.out));
+    return gulp.src([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+        config.sass.in
+    ])
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(concat('style.min.css'))
+    .pipe(gulp.dest(config.sass.out));
 });
 
 gulp.task('js', function() {
-	return gulp.src(config.js.in)
-      .pipe(uglify())
-      .pipe(concat('main.min.js'))
-      .pipe(gulp.dest(config.js.out));
+	return gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        config.js.in
+    ])
+    .pipe(uglify())
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest(config.js.out));
 });
 
 gulp.task('lint', function() {
 	return gulp.src(config.js.in)
-	  .pipe(jshint())
-	  .pipe(jshint.reporter('default', {verbose: true}));
+	    .pipe(jshint())
+	    .pipe(jshint.reporter('default', {verbose: true}));
 });
 
 gulp.task('build', function() {
-    // Strip any debug code from JS
-    return gulp.src(config.js.in)
-      .pipe(strip())
-      .pipe(uglify())
-      .pipe(concat('main.min.js'))
-      .pipe(gulp.dest(config.js.out));
+    gulp.start('sass');
+    
+    // strip any debug code from JS
+    return gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        config.js.in
+    ])
+    .pipe(strip())
+    .pipe(uglify())
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest(config.js.out));
 });
 
 gulp.task('default', ['sass', 'js'], function() {
     if (ARGS.build === true) {
         gulp.start('build');
     } else {
-        // Watch JS for changes
+        // watch JS for changes
     	gulp.watch(config.js.in, function() {
             gulp.start('lint', 'js');
     	});
 
-    	// Watch SASS for changes
+    	// watch SASS for changes
     	gulp.watch(config.sass.in, function() {
     		gulp.start('sass');
     	});

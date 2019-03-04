@@ -1,27 +1,27 @@
 Front-end boilerplate
 =====================
 
-A yarn and gulp boilerplate for projects requiring task running
+An npm and gulp boilerplate for projects requiring task running
 
 ## Requirements
-* [yarn](https://yarnpkg.com/)
+* [yarn](https://npmjs.com/)
 * [gulp](http://gulpjs.com/)
 
 ## Quick Start
 * `git clone https://github.com/peefeeyatko/frontend-boilerplate.git`
-* run `yarn install` or `yarn` this will install all required plugins and dependencies defined in package.json
+* run `npm install` this will install all required plugins and dependencies defined in package.json
 * Update config object in gulpfile.js
 ```js
 // Define the in and out paths to your project's assets (sass, js)
 var config = {
     js: {
-        in: 'public/js/src/**/*.js',
-        out: 'public/js/dist/'
+        in: 'src/js/*.js',
+        out: 'public/js/'
     },
 
     sass: {
-        in: 'public/css/src/**/*.scss',
-        out: 'public/css/dist/'
+        in: 'src/sass/**/*.scss',
+        out: 'public/css/'
     }
 };
 ```
