@@ -31,4 +31,4 @@ let config = {
 Short description of each gulp task defined in gulpfile.js
 * `gulp css` - Compiles, minifies and concatenates all css files in the src directory
 * `gulp js` - Minifies and concatenates all js files in src directory
-* `gulp lint` - Pipes all js files in src directory through the jshint reporter. Rules are configured in the .jshintrc file
+* `gulp lint` - Pipes js files in src directory through the jshint reporter all rules are defined in the .jshintrc file
