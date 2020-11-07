@@ -1,30 +1,16 @@
 {
-
-    // Allow standard browser globals e.g 'window', 'document'
-    "browser"      : true,
-
-    "jquery"       : true, // $ is all good
-
-
-    // Code style
-    "camelcase"    : true,
-    "curly"        : true,
-    "strict"       : false,
-    "asi"          : false, // Require semicolons
-    "unused"       : true,
-    "undef"        : true,
-    "plusplus"     : true,
-    "quotmark"     : "single",
-    "eqeqeq"       : true,   // Require triple equals i.e. '==='
-
-
-    // Code complexity
-    "maxparams"     : 3,
+    "browser"       : true,
+    "camelcase"     : true,
+    "curly"         : true,
+    "strict"        : false,
+    "asi"           : false,
+    "unused"        : true,
+    "undef"         : true,
+    "plusplus"      : true,
+    "quotmark"      : "single",
+    "eqeqeq"        : true,
     "maxdepth"      : 2,
     "maxcomplexity" : 4,
-
-
-    // Debug
-    "devel"        : false // Do not allow debug code e.g. 'console.log' into stage or prod
-
+    "esversion"     : 6,
+    "devel"         : false
 }

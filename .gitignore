@@ -1,12 +1,10 @@
+# OS files
 .DS_Store
 Thumbs.db
 
-.sass-cache
-
+# npm
 node_modules/
-bower_components/
 
-bin/
-
-# Ignore my test dir
-public/
+# project assets
+src/
+dist/
