@@ -8,14 +8,10 @@
 
 const {src, dest, watch, series} = require('gulp');
 
-const argv = require('yargs').argv;
 const concat = require('gulp-concat');
 const jshint = require('gulp-jshint');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
-
-// capture arguments passed to the gulp command
-const ARGS = argv;
 
 // define the paths to your project's assets
 let config = {
