@@ -6,11 +6,11 @@
     "asi"           : false,
     "unused"        : true,
     "undef"         : true,
-    "plusplus"      : true,
+    "plusplus"      : false,
     "quotmark"      : "single",
     "eqeqeq"        : true,
     "maxdepth"      : 2,
     "maxcomplexity" : 4,
     "esversion"     : 6,
-    "devel"         : false
+    "devel"         : true
 }
